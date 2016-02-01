@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_draw.c                                          :+:      :+:    :+:   */
+/*   ft_get_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:23:00 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 16:32:25 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/01 16:17:53 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/01 16:35:05 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_draw(t_graph *graph)
+int	ft_get_key(int key, void *obj)
 {
-	int	x;
-	int	y;
+	t_graph	*graph;
 
-	x = 200;
-	while (x < 300)
+	graph = (t_graph*)obj;
+	if (key == 53)
 	{
-		y = 200;
-		while (y < 300)
-		{
-			mlx_pixel_put(graph->mlx, graph->win, x, y, (x - 200) * 256 / 100 * 0x00010000 +  (y - 200) * 256 / 100 * 0x00000100 );
-			y++;
-		}
-		x++;
+		mlx_destroy_window(graph->mlx, graph->win);
+		exit(0);
 	}
+	else
+		ft_print_key(key);
+	return (0 * (int)obj);
 }
