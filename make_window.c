@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 16:31:43 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/01 17:13:10 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void	make_window(void)
 	t_graph	*graph;
 
 	graph = (t_graph*)ft_memalloc(sizeof(t_graph));
+	graph->width = WIDTH;
+	graph->height = HEIGHT;
 	graph->mlx = mlx_init();
-	graph->win = mlx_new_window(graph->mlx, 500, 500, "test");
+	graph->win = mlx_new_window(graph->mlx, graph->width, graph->height, "FDF");
 	ft_draw(graph);
 	mlx_key_hook(graph->win, &ft_get_key, graph);
 	mlx_loop(graph->mlx);

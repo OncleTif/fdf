@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 16:17:53 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 16:35:05 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/01 17:22:29 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_get_key(int key, void *obj)
 		mlx_destroy_window(graph->mlx, graph->win);
 		exit(0);
 	}
+	else if (key >= 123 && key <= 126)
+		ft_move_draw(key, obj);
 	else
 		ft_print_key(key);
 	return (0 * (int)obj);
