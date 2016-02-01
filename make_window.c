@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   make_window.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 13:30:15 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/01 13:30:34 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-# include <mlx.h>
-# include <fcntl.h>
-# include "libft/libft.h"
+#include "fdf.h"
 
-int		ft_reader(char *str);
-void	make_window(void);
-void	ft_draw(void *mlx, void *win);
-#endif
+void	make_window(void)
+{
+	void	*mlx;
+	void	*win;
+
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 500, 500, "test");
+	ft_draw(mlx, win);
+	mlx_loop(mlx);
+}

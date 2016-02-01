@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 11:57:48 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 12:18:40 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/01 13:29:09 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc && argv)
-		;
+	if (argc > 1 && argv)
+	{
+		ft_reader(argv[1]);
+	}
+	make_window();
 	return(0);
 }

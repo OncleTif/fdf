@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 13:30:15 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/01 13:23:00 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/01 13:31:29 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-# include <mlx.h>
-# include <fcntl.h>
-# include "libft/libft.h"
+#include "fdf.h"
 
-int		ft_reader(char *str);
-void	make_window(void);
-void	ft_draw(void *mlx, void *win);
-#endif
+void	ft_draw(void *mlx, void *win)
+{
+	int	x;
+	int	y;
+
+	x = 200;
+	while (x < 300)
+	{
+		y = 200;
+		while (y < 300)
+		{
+			mlx_pixel_put(mlx, win, x, y, 0x00FFFF00);
+			y++;
+		}
+		x++;
+	}
+}
