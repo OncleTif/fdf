@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 17:30:31 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 17:48:19 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct	s_grid
 	int				**map;
 	int				x_max;
 	int				y_max;
+	int				x_mid;
+	int				y_mid;
 }				t_grid;
 
 typedef struct	s_graph

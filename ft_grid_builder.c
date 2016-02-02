@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 14:48:04 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 17:16:28 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 17:50:53 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ t_grid	*ft_grid_builder(t_list *lst)
 		lst = lst->next;
 		i++;
 	}
+	grid->x_mid = grid->x_max / 2;
+	grid->y_mid = grid->y_max / 2;
 	return (grid);
 }

@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 16:03:13 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 17:16:58 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 17:52:37 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	*ft_line_to_i(char *line, t_grid *grid)
 {
-	int			*tab;
-	char			**words;
-	int				i;
+	int		*tab;
+	char	**words;
+	int		i;
 
 	i = 0;
 	words = ft_strsplit(line, ' ');
