@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 15:49:24 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/01 16:21:28 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 11:57:52 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_print_key(int key)
 {
-	ft_putstr("touche appuyee : ");
+	ft_putstr("key pressed : ");
 	ft_putnbrendl(key);
 }

@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 10:57:48 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 11:56:42 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_reader(char *file)
 	if ((fd = open(file, O_RDONLY)) > 0)
 	{
 		while ((in_file = get_next_line(fd, &str)) > 0 )
-			ft_putstr(str);
+			ft_putendl(str);
 		if (in_file == -1)
 			ft_error("read error");
 	}
