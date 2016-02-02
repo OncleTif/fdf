@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 15:48:16 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 17:30:31 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef	struct	s_keymap
 
 typedef struct	s_grid
 {
-	unsigned int	**map;
+	int				**map;
 	int				x_max;
 	int				y_max;
 }				t_grid;
@@ -38,17 +38,18 @@ typedef struct	s_graph
 	int			height;
 	int			x_offset;
 	int			y_offset;
+	t_grid		*grid;
 	void		*mlx;
 	void		*win;
 }				t_graph;
 
 t_list			*ft_reader(char *str);
-void			make_window(void);
+void			make_window(t_grid *grid);
 void			ft_draw(t_graph *graph);
 void			ft_print_key(int key);
 int				ft_get_key(int key, void *obj);
 void			ft_move_draw(int key, void *obj);
-unsigned int	*ft_line_to_ui(char *line, t_grid *grid);
+int				*ft_line_to_i(char *line, t_grid *grid);
 t_grid			*ft_grid_builder(t_list *lst);
 void			ft_grid_printer(t_grid *grid);
 #endif

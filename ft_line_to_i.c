@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reader.c                                        :+:      :+:    :+:   */
+/*   ft_line_to_i.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 17:14:49 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/02 16:03:13 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/02 17:16:58 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_list	*ft_reader(char *file)
+int	*ft_line_to_i(char *line, t_grid *grid)
 {
-	int		fd;
-	int		in_file;
-	char	*str;
-	t_list	*lst;
+	int			*tab;
+	char			**words;
+	int				i;
 
-	lst = NULL;
-	str = NULL;
-	if ((fd = open(file, O_RDONLY)) > 0)
+	i = 0;
+	words = ft_strsplit(line, ' ');
+	if (!grid->x_max)
+		while (words[grid->x_max])
+			grid->x_max++;
+	if (!(tab = (int*)ft_memalloc(sizeof(int) * grid->x_max)))
+		ft_error("map line allocation failed");
+	while (i < grid->x_max)
 	{
-		while ((in_file = get_next_line(fd, &str)) > 0 )
-			ft_lstpush_back(&lst, ft_lstnew(str, ft_strlen(str)));
-		if (in_file == -1)
-			ft_error("read error");
+		tab[i] = ft_atoi(words[i]);
+		i++;
 	}
-	else
-		ft_error("can't open file");
-	return (lst);
+	return (tab);
 }
