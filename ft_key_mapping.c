@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reader.c                                        :+:      :+:    :+:   */
+/*   ft_key_lister.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 12:10:46 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/01 17:27:51 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/02 12:13:24 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_list	*ft_reader(char *file)
+t_list	*ft_key_mapping(void)
 {
-	int		fd;
-	int		in_file;
-	char	*str;
-	t_list	*lst;
+t_list	*elem;
 
-	lst = NULL;
-	if ((fd = open(file, O_RDONLY)) > 0)
-	{
-		while ((in_file = get_next_line(fd, &str)) > 0 )
-			ft_putendl(str);
-		if (in_file == -1)
-			ft_error("read error");
-	}
-	else
-		ft_error("can't open file");
-	return (lst);
+
+
+return (elem);
 }

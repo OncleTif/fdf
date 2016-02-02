@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 12:06:55 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 12:09:50 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct	s_graph
 	void		*win;
 }				t_graph;
 
-int				ft_reader(char *str);
+t_list			*ft_reader(char *str);
 void			make_window(void);
 void			ft_draw(t_graph *graph);
 void			ft_print_key(int key);
