@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 12:09:50 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 15:48:16 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,7 @@ void			ft_draw(t_graph *graph);
 void			ft_print_key(int key);
 int				ft_get_key(int key, void *obj);
 void			ft_move_draw(int key, void *obj);
+unsigned int	*ft_line_to_ui(char *line, t_grid *grid);
+t_grid			*ft_grid_builder(t_list *lst);
+void			ft_grid_printer(t_grid *grid);
 #endif

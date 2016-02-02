@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reader.c                                        :+:      :+:    :+:   */
+/*   ft_grid_builder.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 14:43:06 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/02 14:48:04 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/02 15:41:54 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_list	*ft_reader(char *file)
+t_grid	*ft_grid_builder(t_list *lst)
 {
-	int		fd;
-	int		in_file;
-	char	*str;
-	t_list	*lst;
+	t_grid	*grid;
+	t_list	*elem;
+	int		i;
 
-	lst = NULL;
-	if ((fd = open(file, O_RDONLY)) > 0)
+	i = 0;
+	grid = (t_grid*)ft_memalloc(sizeof(t_grid));
+	elem = lst;
+	while (elem)
 	{
-		while ((in_file = get_next_line(fd, &str)) > 0 )
-		{
-			ft_lstpush_back(&lst, ft_lstnew(ft_strdup(str), sizeof(char*)));
-			ft_putendl(str);
-		}
-		if (in_file == -1)
-			ft_error("read error");
+		grid->y_max++;
+		elem = elem->next;
 	}
-	else
-		ft_error("can't open file");
-	return (lst);
+	grid->map = (unsigned int**)ft_memalloc(sizeof(int*) * grid->y_max);
+	while (i < grid->y_max)
+	{
+		grid->map[i] = ft_line_to_ui((char*)lst->content, grid);
+		lst = lst->next;
+		i++;
+	}
+	return (grid);
 }

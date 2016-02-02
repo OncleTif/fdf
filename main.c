@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 11:57:48 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 10:45:28 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/02 15:50:43 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 int	main(int argc, char **argv)
 {
+	t_list	*list;
+	t_grid	*grid;
+
 	if (argc > 1 && argv)
 	{
-		ft_reader(argv[1]);
+		list = ft_reader(argv[1]);
+		grid = ft_grid_builder(list);
+		ft_grid_printer(grid);
 	}
 	make_window();
 	ft_error("not enough args");

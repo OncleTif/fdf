@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reader.c                                        :+:      :+:    :+:   */
+/*   ft_grid_printer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/02 14:43:06 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/02 15:44:33 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/02 15:47:48 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_list	*ft_reader(char *file)
+void	ft_grid_printer(t_grid *grid)
 {
-	int		fd;
-	int		in_file;
-	char	*str;
-	t_list	*lst;
+	int	i;
+	int	j;
 
-	lst = NULL;
-	if ((fd = open(file, O_RDONLY)) > 0)
+	i = 0;
+	while (i < grid->y_max)
 	{
-		while ((in_file = get_next_line(fd, &str)) > 0 )
+		j = 0;
+		while (j < grid->x_max)
 		{
-			ft_lstpush_back(&lst, ft_lstnew(ft_strdup(str), sizeof(char*)));
-			ft_putendl(str);
+			ft_putnbr(grid->map[i][j]);
+			ft_putchar(' ');
+			j++;
 		}
-		if (in_file == -1)
-			ft_error("read error");
+		ft_putchar('\n');
+		i++;
 	}
-	else
-		ft_error("can't open file");
-	return (lst);
 }
