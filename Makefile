@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/01 17:23:09 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/02 10:47:31 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(OBJ)
+$(NAME): $(OBJ)
+	make -C libft
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIB) $(MINILIBX)
 	@echo "COMPILATION de $(NAME)"
 
@@ -54,8 +55,5 @@ fclean: clean
 	@echo "suppression de la lib"
 	@rm -rf $(NAME)
 	@echo "suppression de $(NAME)"
-
-$(LIB):
-	make -C libft
 
 re: fclean all
