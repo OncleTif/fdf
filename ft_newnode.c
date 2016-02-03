@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_newnode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 11:57:48 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 14:49:14 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/03 13:49:07 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/03 14:45:58 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+t_node	*ft_newnode(int x, int y, int z)
 {
-	t_list	*list;
-	t_grid	*grid;
+	t_node	*node;
 
-	grid = NULL;
-	if (argc > 1 && argv)
-	{
-		list = ft_reader(argv[1]);
-		grid = ft_grid_builder(list);
-		ft_grid_printer(grid);
-		make_window(grid, list);
-	}
-	ft_error("not enough args");
-	return (0);
+	if (!(node = (t_node*)ft_memalloc(sizeof(t_node))))
+		ft_error("node allocation error");
+	node->x = x;
+	node->y = y;
+	node->z = z;
+	return (node);
 }

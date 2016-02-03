@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 11:54:49 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/03 15:19:49 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_reader(char *file)
 	if ((fd = open(file, O_RDONLY)) > 0)
 	{
 		while ((in_file = get_next_line(fd, &str)) > 0)
-			ft_lstpush_back(&lst, ft_lstnew(&str, sizeof(char*)));
+			ft_lstpush_back(&lst, ft_lstnew(str, ft_strlen(str)));
 		if (in_file == -1)
 			ft_error("read error");
 	}

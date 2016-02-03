@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/02 18:24:38 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/03 14:50:12 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,13 @@ SRC =   main.c \
 		ft_get_key.c \
 		ft_move_draw.c \
 		ft_grid_builder.c \
+		ft_map_builder.c \
 		ft_grid_printer.c \
 		ft_line_to_i.c \
+		ft_line_to_nodes.c \
 		ft_zoom_in.c \
 		ft_zoom_out.c \
+		ft_newnode.c
 
 
 OBJ = $(SRC:.c=.o)
