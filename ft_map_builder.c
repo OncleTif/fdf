@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reader.c                                        :+:      :+:    :+:   */
+/*   ft_map_builder.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 13:05:27 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 11:54:49 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/03 12:38:19 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/03 12:45:27 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_list	*ft_reader(char *file)
+t_node	*ft_map_builder(t_list *lst)
 {
-	int		fd;
-	int		in_file;
-	char	*str;
-	t_list	*lst;
+	t_node	*org;
+	t_node	*node;
+	t_node	*lst_ln;
 
-	lst = NULL;
-	str = NULL;
-	if ((fd = open(file, O_RDONLY)) > 0)
+	lst_ln = NULL;
+	while (lst)
 	{
-		while ((in_file = get_next_line(fd, &str)) > 0)
-			ft_lstpush_back(&lst, ft_lstnew(&str, sizeof(char*)));
-		if (in_file == -1)
-			ft_error("read error");
+		node = ft_line_to_nodes((char*)lst->content, lst_ln);
+		if (lst_ln)
+			lst_ln->dwn = node;
+		else
+			org = node;
+		lst_ln = node;
+		lst = lst->next;
 	}
-	else
-		ft_error("can't open file");
-	return (lst);
+	return (org);
 }
