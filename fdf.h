@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 14:49:00 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/03 15:36:16 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void			ft_move_draw(int key, void *obj);
 int				*ft_line_to_i(char *line, t_grid *grid);
 t_grid			*ft_grid_builder(t_list *lst);
 void			ft_grid_printer(t_grid *grid);
-t_node			*ft_map_builder(t_list *lst, t_graph *grp);
+void			ft_map_builder(t_list *lst, t_graph *grp);
+void			ft_map_relative(t_graph *grp);
 t_node			*ft_line_to_nodes(char **lst, t_node *lst_ln, t_graph *grp);
 t_node			*ft_newnode(int x, int y, int z);
 #endif

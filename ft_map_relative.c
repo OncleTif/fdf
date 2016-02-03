@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_builder.c                                   :+:      :+:    :+:   */
+/*   ft_map_relative.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/03 12:38:19 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 15:31:24 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/03 15:31:39 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/03 15:35:27 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_map_builder(t_list *lst, t_graph *grp)
+void	ft_map_relative(t_graph *grp)
 {
 	t_node	*node;
-	t_node	*lst_ln;
+	t_node	*line;
 
-	lst_ln = NULL;
-	while (lst)
+	line = grp->node;
+	while (line)
 	{
-		node = ft_line_to_nodes(ft_strsplit((char*)lst->content, ' '),
-				lst_ln, grp);
-		if (lst_ln)
-			lst_ln->dwn = node;
-		else
-			grp->node = node;
-		lst_ln = node;
-		lst = lst->next;
-		grp->y_max++;
+		node = line;
+		while (node)
+		{
+			node->x = node->x - grp->x_mid;
+			node->y = node->y - grp->y_mid;
+			node = node->rgt;
+		}
+		line = line->dwn;
 	}
-	grp->x_mid = grp->x_max / 2;
-	grp->y_mid = grp->y_max / 2;
-	ft_map_relative(grp);
 }
