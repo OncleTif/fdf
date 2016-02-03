@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 15:23:38 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/03 16:11:55 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	make_window(t_grid *grid, t_list *list)
 	graph->x_offset = WIDTH / 2;
 	graph->y_offset = HEIGHT / 2;
 	graph->zoom = 20;
-	ft_putendl("av grid affect");
 	graph->grid = grid;
-	ft_putendl("av map buider");
-	graph->node = ft_map_builder(list, graph);
+	ft_map_builder(list, graph);
 	graph->mlx = mlx_init();
 	graph->win = mlx_new_window(graph->mlx, graph->width, graph->height, "FDF");
 	ft_draw(graph);

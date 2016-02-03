@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 12:38:19 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 15:31:24 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/03 15:56:37 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ void	ft_map_builder(t_list *lst, t_graph *grp)
 {
 	t_node	*node;
 	t_node	*lst_ln;
+	char	**tab;
 
 	lst_ln = NULL;
 	while (lst)
 	{
-		node = ft_line_to_nodes(ft_strsplit((char*)lst->content, ' '),
-				lst_ln, grp);
+		tab = ft_strsplit((char*)lst->content, ' ');
+		node = ft_line_to_nodes(tab, lst_ln, grp);
 		if (lst_ln)
 			lst_ln->dwn = node;
 		else
