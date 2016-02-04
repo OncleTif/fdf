@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 16:37:05 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 18:02:05 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 11:23:58 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ void	ft_draw_line(t_node *node1, t_node *node2, t_graph *grp)
 
 	for(;;){
 		//setPixel(x0,y0);
-		mlx_pixel_put(grp->mlx, grp->win, x0, y0, node1->color);
+		if (node1->color == node2->color)
+			mlx_pixel_put(grp->mlx, grp->win, x0, y0, node1->color);
+		else
+			mlx_pixel_put(grp->mlx, grp->win, x0, y0, 0x00FFFFFF);
 		if (x0==x1 && y0==y1) break;
 		e2 = err;
 		if (e2 >-dx) { err -= dy; x0 += sx; }
