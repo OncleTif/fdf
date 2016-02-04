@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 13:05:39 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 14:30:48 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	make_window(t_grid *grid, t_list *list)
 	graph->win = mlx_new_window(graph->mlx, graph->width, graph->height, "FDF");
 	ft_draw(graph);
 	mlx_key_hook(graph->win, &ft_get_key, graph);
+	mlx_expose_hook(graph->win, &ft_expose, graph);
 	mlx_loop(graph->mlx);
 	list = NULL;
 }

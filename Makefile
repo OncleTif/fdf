@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/04 13:08:06 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/04 14:34:00 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC =   main.c \
 		ft_draw_line.c \
 		ft_print_key.c \
 		ft_get_key.c \
+		ft_expose.c \
 		ft_move_draw.c \
 		ft_grid_builder.c \
 		ft_map_builder.c \
