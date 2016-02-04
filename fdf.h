@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 15:46:49 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 16:08:42 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,6 @@ typedef struct	s_node
 	struct s_node	*lft;
 	struct s_node	*rgt;
 }				t_node;
-
-typedef struct	s_grid
-{
-	int				**map;
-	int				x_max;
-	int				y_max;
-	int				x_mid;
-	int				y_mid;
-}				t_grid;
 
 typedef struct	s_graph
 {
@@ -89,10 +80,6 @@ void			ft_rotate_xz_up(t_graph *graph);
 void			ft_print_key(int key);
 int				ft_get_key(int key, void *obj);
 int				ft_expose(void *obj);
-void			ft_move_draw(int key, void *obj);
-int				*ft_line_to_i(char *line, t_grid *grid);
-t_grid			*ft_grid_builder(t_list *lst);
-void			ft_grid_printer(t_grid *grid);
 void			ft_map_builder(t_list *lst, t_graph *grp);
 void			ft_map_relative(t_graph *grp);
 void			ft_draw_line(t_node *node1, t_node *node2, t_graph *grp);
