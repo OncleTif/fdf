@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/04 16:10:01 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/04 17:03:48 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRC =   main.c \
 		ft_rotate_xz_up.c \
 		ft_rotate_yz_lft.c \
 		ft_rotate_yz_rgt.c \
+		ft_line_init.c \
 		ft_line_to_nodes.c \
 		ft_zoom_in.c \
 		ft_zoom_out.c \
