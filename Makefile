@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/03 17:34:02 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/04 13:08:06 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,17 @@ SRC =   main.c \
 		ft_map_builder.c \
 		ft_map_relative.c \
 		ft_grid_printer.c \
+		ft_rotate_xy_lft.c \
+		ft_rotate_xy_rgt.c \
+		ft_rotate_xz_dwn.c \
+		ft_rotate_xz_up.c \
+		ft_rotate_yz_lft.c \
+		ft_rotate_yz_rgt.c \
 		ft_line_to_i.c \
 		ft_line_to_nodes.c \
 		ft_zoom_in.c \
 		ft_zoom_out.c \
+		ft_projector.c \
 		ft_newnode.c
 
 

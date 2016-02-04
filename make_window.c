@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/03 16:11:55 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 13:05:39 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	make_window(t_grid *grid, t_list *list)
 	graph->x_offset = WIDTH / 2;
 	graph->y_offset = HEIGHT / 2;
 	graph->zoom = 20;
+	graph->angle = 30;
+	graph->anglexy = 30;
+	graph->anglexz = 30;
+	graph->angleyz = 30;
 	graph->grid = grid;
 	ft_map_builder(list, graph);
 	graph->mlx = mlx_init();
