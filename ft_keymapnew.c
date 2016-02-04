@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_key.c                                       :+:      :+:    :+:   */
+/*   ft_keymapnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 16:17:53 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 15:55:08 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/04 15:15:11 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/04 15:26:41 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	ft_get_key(int key, void *obj)
+t_keymap	*ft_keymapnew(int key, t_keymap *nxt, void (*f)(t_graph*))
 {
-	t_graph		*grp;
-	t_keymap	*keymap;
+	t_keymap	*ret;
 
-	grp = (t_graph*)obj;
-	keymap = grp->keymap;
-	if (key == 53)
-	{
-		mlx_destroy_window(grp->mlx, grp->win);
-		exit(0);
-	}
-	while (keymap && keymap->key != key)
-		keymap = keymap->next;
-	if (keymap)
-		keymap->f(grp);
-	else
-		ft_print_key(key);
-	return (0);
+	if (!(ret = (t_keymap*)ft_memalloc(sizeof(t_keymap))))
+		ft_error("keymap allocation error");
+	ret->key = key;
+	ret->f = f;
+	ret->next = nxt;
+	return (ret);
 }

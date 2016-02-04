@@ -6,13 +6,13 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 14:30:48 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 15:47:11 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	make_window(t_grid *grid, t_list *list)
+void	make_window(t_list *list)
 {
 	t_graph	*graph;
 
@@ -23,12 +23,11 @@ void	make_window(t_grid *grid, t_list *list)
 	graph->x_offset = WIDTH / 2;
 	graph->y_offset = HEIGHT / 2;
 	graph->zoom = 20;
-	graph->angle = 30;
 	graph->anglexy = 30;
 	graph->anglexz = 30;
 	graph->angleyz = 30;
-	graph->grid = grid;
 	ft_map_builder(list, graph);
+	graph->keymap = ft_key_mapping();
 	graph->mlx = mlx_init();
 	graph->win = mlx_new_window(graph->mlx, graph->width, graph->height, "FDF");
 	ft_draw(graph);

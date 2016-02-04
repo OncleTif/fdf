@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:23:00 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 11:59:57 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 15:06:52 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,12 @@ void	ft_draw(t_graph *grp)
 		node = line;
 		while (node)
 		{
-			//			node->p_x = (node->x * grp->zoom + grp->x_offset;
-			//			node->p_y = node->y * grp->zoom + grp->y_offset;
 			ft_projector(grp, node);
 			node->color = 0x00FFFFFF;
 			if (node->z > 1)
 				node->color = 0x00FF0000;
-
-			mlx_pixel_put(grp->mlx, grp->win, node->p_x, node->p_y, node->color);
-			//mlx_pixel_put(graph->mlx, graph->win, x * 5 + graph->x_offset,
-			//		y * 5 + graph->y_offset, (x - 200) * 256 / 100 * 0x00010000
-			//		+ (y - 200) * 256 / 100 * 0x00000100);
+			mlx_pixel_put(grp->mlx, grp->win,
+					node->p_x, node->p_y, node->color);
 			if (node->up)
 				ft_draw_line(node, node->up, grp);
 			if (node->lft)

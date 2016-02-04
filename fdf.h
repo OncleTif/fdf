@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 14:23:01 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 15:46:49 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ typedef struct	s_node
 	struct s_node	*rgt;
 }				t_node;
 
-typedef	struct	s_keymap
-{
-	int				key;
-	void			(*f)(int, void*);
-	struct s_keymap	*next;
-}				t_keymap;
-
 typedef struct	s_grid
 {
 	int				**map;
@@ -51,30 +44,42 @@ typedef struct	s_grid
 
 typedef struct	s_graph
 {
-	int			width;
-	int			zoom;
-	int			height;
-	int			angle;
-	int			anglexy;
-	int			anglexz;
-	int			angleyz;
-	int			x_offset;
-	int			y_offset;
-	t_grid		*grid;
-	t_node		*node;
-	void		*mlx;
-	void		*win;
+	int				width;
+	int				zoom;
+	int				height;
+	int				anglexy;
+	int				anglexz;
+	int				angleyz;
+	int				x_offset;
+	int				y_offset;
+	struct s_keymap	*keymap;
+	t_node			*node;
+	void			*mlx;
+	void			*win;
 	int				x_max;
 	int				y_max;
 	int				x_mid;
 	int				y_mid;
 }				t_graph;
 
+typedef	struct	s_keymap
+{
+	int				key;
+	void			(*f)(t_graph*);
+	struct s_keymap	*next;
+}				t_keymap;
+
+t_keymap		*ft_keymapnew(int key, t_keymap *nxt, void (*f)(t_graph*));
+t_keymap		*ft_key_mapping(void);
 t_list			*ft_reader(char *str);
-void			make_window(t_grid *grid, t_list *list);
+void			make_window(t_list *list);
 void			ft_draw(t_graph *graph);
 void			ft_zoom_in(t_graph *graph);
 void			ft_zoom_out(t_graph *graph);
+void			ft_move_dwn(t_graph *graph);
+void			ft_move_lft(t_graph *graph);
+void			ft_move_rgt(t_graph *graph);
+void			ft_move_up(t_graph *graph);
 void			ft_rotate_yz_lft(t_graph *graph);
 void			ft_rotate_yz_rgt(t_graph *graph);
 void			ft_rotate_xy_lft(t_graph *graph);

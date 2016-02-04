@@ -6,13 +6,13 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 16:37:05 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 11:23:58 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/04 15:10:28 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_draw_nothing(t_node *node1, t_node *node2, t_graph *grp)
+void	qft_draw_line(t_node *node1, t_node *node2, t_graph *grp)
 {
 	int	p_x;
 	int	p_y;
