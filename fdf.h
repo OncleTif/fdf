@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 14:07:21 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/11 14:23:32 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include "libft/libft.h"
 # define HEIGHT 500
 # define WIDTH 500
-# define ANGLEXY -45
-# define ANGLEXZ  60
-# define ANGLEYZ 5
 
 typedef struct		s_node
 {
@@ -41,9 +38,6 @@ typedef struct		s_graph
 	int				width;
 	int				zoom;
 	int				height;
-	int				anglexy;
-	int				anglexz;
-	int				angleyz;
 	int				x_offset;
 	int				y_offset;
 	struct s_keymap	*keymap;
@@ -87,19 +81,12 @@ void				ft_move_lft(t_graph *graph);
 void				ft_move_rgt(t_graph *graph);
 void				ft_move_up(t_graph *graph);
 void				ft_origin(t_graph *graph);
-void				ft_rotate_yz_lft(t_graph *graph);
-void				ft_rotate_yz_rgt(t_graph *graph);
-void				ft_rotate_xy_lft(t_graph *graph);
-void				ft_rotate_xy_rgt(t_graph *graph);
-void				ft_rotate_xz_dwn(t_graph *graph);
-void				ft_rotate_xz_up(t_graph *graph);
 void				ft_print_key(int key);
 int					ft_get_key(int key, void *obj);
 int					ft_expose(void *obj);
 void				ft_map_builder(t_list *lst, t_graph *grp);
 void				ft_map_relative(t_graph *grp);
 void				ft_draw_line(t_node *node1, t_node *node2, t_graph *grp);
-void				ft_projector(t_graph *grp, t_node *node);
 void				ft_projector_iso(t_graph *grp, t_node *node);
 t_node				*ft_line_to_nodes(char **lst, t_node *lst_ln, t_graph *grp);
 void				ft_line_init(t_node *node1, t_node *node2, t_line *ln);
