@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_relative.c                                  :+:      :+:    :+:   */
+/*   ft_projector_iso.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/03 15:31:39 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 14:13:06 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/11 13:49:21 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/11 14:14:28 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_map_relative(t_graph *grp)
+void	ft_projector_iso(t_graph *grp, t_node *node)
 {
-	t_node	*node;
-	t_node	*line;
-
-	line = grp->node;
-	while (line)
-	{
-		node = line;
-		while (node)
-		{
-			node->x = node->x - grp->x_mid;
-			node->y = grp->y_max - node->y - grp->y_mid;
-			node = node->rgt;
-		}
-		line = line->dwn;
-	}
+	node->p_x = grp->zoom * (node->x - node->y) * sqrt(2) / 2 + grp->x_offset;
+	node->p_y = grp->zoom * ((sqrt(2) * -node->z / sqrt(3) -
+				(node->x + node->y)  / sqrt(6))) + grp->y_offset;
 }

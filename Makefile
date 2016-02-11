@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/04 17:46:43 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/11 14:07:46 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC =   main.c \
 		ft_zoom_in.c \
 		ft_zoom_out.c \
 		ft_projector.c \
+		ft_projector_iso.c \
 		ft_newnode.c
 
 

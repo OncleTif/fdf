@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:23:00 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 15:06:52 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/11 14:08:13 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_draw(t_graph *grp)
 		node = line;
 		while (node)
 		{
-			ft_projector(grp, node);
+			ft_projector_iso(grp, node);
 			node->color = 0x00FFFFFF;
 			if (node->z > 1)
 				node->color = 0x00FF0000;
