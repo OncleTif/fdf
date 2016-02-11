@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 15:12:33 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/11 18:22:18 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void				ft_move_rgt(t_graph *graph);
 void				ft_move_up(t_graph *graph);
 void				ft_origin(t_graph *graph);
 void				ft_print_key(int key);
+void				ft_text(t_graph *grp);
 int					ft_get_key(int key, void *obj);
 int					ft_expose(void *obj);
 void				ft_map_builder(t_list *lst, t_graph *grp);
