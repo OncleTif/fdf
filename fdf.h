@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 14:23:32 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/11 15:12:33 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct		s_graph
 {
 	int				width;
 	int				zoom;
+	int				zoom_opti;
+	int				zoom_step;
 	int				height;
 	int				x_offset;
 	int				y_offset;
@@ -48,6 +50,8 @@ typedef struct		s_graph
 	int				y_max;
 	int				x_mid;
 	int				y_mid;
+	int				z_min;
+	int				z_max;
 }					t_graph;
 
 typedef struct		s_line
@@ -76,6 +80,7 @@ void				make_window(t_list *list);
 void				ft_draw(t_graph *graph);
 void				ft_zoom_in(t_graph *graph);
 void				ft_zoom_out(t_graph *graph);
+void				ft_zoom_opti(t_graph *graph);
 void				ft_move_dwn(t_graph *graph);
 void				ft_move_lft(t_graph *graph);
 void				ft_move_rgt(t_graph *graph);
@@ -90,5 +95,5 @@ void				ft_draw_line(t_node *node1, t_node *node2, t_graph *grp);
 void				ft_projector_iso(t_graph *grp, t_node *node);
 t_node				*ft_line_to_nodes(char **lst, t_node *lst_ln, t_graph *grp);
 void				ft_line_init(t_node *node1, t_node *node2, t_line *ln);
-t_node				*ft_newnode(int x, int y, int z);
+t_node				*ft_newnode(int x, int y, int z, t_graph *grp);
 #endif
