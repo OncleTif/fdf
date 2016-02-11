@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/04 17:07:26 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/10 16:21:06 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "libft/libft.h"
 # define HEIGHT 500
 # define WIDTH 500
+# define ANGLEXY -45
+# define ANGLEXZ  60
+# define ANGLEYZ 5
 
 typedef struct		s_node
 {
@@ -83,6 +86,7 @@ void				ft_move_dwn(t_graph *graph);
 void				ft_move_lft(t_graph *graph);
 void				ft_move_rgt(t_graph *graph);
 void				ft_move_up(t_graph *graph);
+void				ft_origin(t_graph *graph);
 void				ft_rotate_yz_lft(t_graph *graph);
 void				ft_rotate_yz_rgt(t_graph *graph);
 void				ft_rotate_xy_lft(t_graph *graph);

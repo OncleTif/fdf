@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/04 17:03:48 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/04 17:46:43 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC =   main.c \
 		ft_keymapnew.c \
 		ft_map_builder.c \
 		ft_map_relative.c \
+		ft_origin.c \
 		ft_rotate_xy_lft.c \
 		ft_rotate_xy_rgt.c \
 		ft_rotate_xz_dwn.c \
