@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:00:23 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/12 12:41:44 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/12 18:00:38 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct		s_graph
 	int				y_mid;
 	int				z_min;
 	int				z_max;
+	int				x_mouse;
+	int				y_mouse;
 }					t_graph;
 
 typedef struct		s_line
