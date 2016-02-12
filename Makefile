@@ -6,7 +6,7 @@
 #    By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 09:19:22 by tmanet            #+#    #+#              #
-#    Updated: 2016/02/12 12:42:38 by tmanet           ###   ########.fr        #
+#    Updated: 2016/02/12 18:14:35 by tmanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC =   main.c \
 		ft_draw_line.c \
 		ft_print_key.c \
 		ft_get_key.c \
+		ft_get_mouse.c \
 		ft_expose.c \
 		ft_move_dwn.c \
 		ft_move_lft.c \

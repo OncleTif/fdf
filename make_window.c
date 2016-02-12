@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/12 18:04:50 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/12 18:27:32 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	make_window(t_list *list)
 	graph->mlx = mlx_init();
 	graph->win = mlx_new_window(graph->mlx, graph->width, graph->height, "FDF");
 	mlx_key_hook(graph->win, &ft_get_key, graph);
-	mlx_hook(graph->win, MotionNotify, PointerMotionMask, &ft_get_mouse, graph);
+	mlx_hook(graph->win, BUTTON_NOTIFY, BUTTON1_MOTION_MASK, &ft_get_mouse, graph);
 	mlx_loop_hook(graph->mlx, NULL, graph);
 	mlx_expose_hook(graph->win, &ft_expose, graph);
 	mlx_loop(graph->mlx);
