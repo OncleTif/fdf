@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:15:12 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 17:22:02 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/12 12:22:07 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	make_window(t_list *list)
 	graph->x_offset = WIDTH / 2;
 	graph->y_offset = HEIGHT / 2;
 	ft_map_builder(list, graph);
+	if (!graph->x_max)
+		ft_error("file does not contain a map");
 	ft_zoom_opti(graph);
 	graph->keymap = ft_key_mapping();
 	graph->mlx = mlx_init();
