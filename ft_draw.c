@@ -6,7 +6,7 @@
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 13:23:00 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/11 18:22:22 by tmanet           ###   ########.fr       */
+/*   Updated: 2016/02/12 12:42:01 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_draw(t_graph *grp)
 {
-	t_node	*node;
+	t_node	*nd;
 	t_node	*line;
 
 	mlx_clear_window(grp->mlx, grp->win);
 	line = grp->node;
 	while (line)
 	{
-		node = line;
-		while (node)
+		nd = line;
+		while (nd)
 		{
-			ft_projector_iso(grp, node);
-			node->color = 0x00FFFFFF;
-			if (node->z > 1)
-				node->color = 0x00FF0000;
-			mlx_pixel_put(grp->mlx, grp->win,
-					node->p_x, node->p_y, node->color);
-			if (node->up)
-				ft_draw_line(node, node->up, grp);
-			if (node->lft)
-				ft_draw_line(node, node->lft, grp);
-			node = node->rgt;
+			ft_projector_iso(grp, nd);
+			nd->color = 0x00FFFFFF;
+			if (nd->z > 1)
+				nd->color = 0x00FF0000;
+			if (ft_limiter(nd->p_x, nd->p_y, grp))
+				mlx_pixel_put(grp->mlx, grp->win, nd->p_x, nd->p_y, nd->color);
+			if (nd->up)
+				ft_draw_line(nd, nd->up, grp);
+			if (nd->lft)
+				ft_draw_line(nd, nd->lft, grp);
+			nd = nd->rgt;
 		}
 		line = line->dwn;
 	}

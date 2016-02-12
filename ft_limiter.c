@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_expose.c                                        :+:      :+:    :+:   */
+/*   ft_limiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanet <tmanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/04 14:31:17 by tmanet            #+#    #+#             */
-/*   Updated: 2016/02/12 12:46:21 by tmanet           ###   ########.fr       */
+/*   Created: 2016/02/12 12:33:15 by tmanet            #+#    #+#             */
+/*   Updated: 2016/02/12 12:41:50 by tmanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	ft_expose(void *obj)
+int	ft_limiter(int x, int y, t_graph *grp)
 {
-	ft_draw((t_graph*)obj);
-	return (0);
+	if (x < 0 || y < 0 || x > grp->x_max || y > grp->y_max)
+		return (0);
+	return (1);
 }
